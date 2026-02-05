@@ -6,23 +6,21 @@
 <title>أخبار مسك الختام</title>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-/* ====== الجسم والخلفية ====== */
 body {
   margin:0;
   font-family:'Cairo',sans-serif;
-  background: linear-gradient(to bottom, #f2f2f2, #ffeaa7);
+  background:#f2f2f2;
   color:#000;
 }
 
-/* ====== الهيدر المصغّر ====== */
+/* ====== هيدر ====== */
 header {
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:10px 20px;
-  background: rgba(0,0,0,0.8); /* شفاف قليلاً على الخلفية */
+  padding:20px;
+  background:black;
   color:white;
-  border-bottom: 2px solid gold;
 }
 
 .header-text {
@@ -30,37 +28,35 @@ header {
 }
 
 .logo {
-  width:70px;
+  width:100px;
   margin:0;
-  filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
 }
 
 .main-title {
-  font-size:22px;
+  font-size:28px;
   font-weight:900;
   margin:0;
 }
 
 .subtitle {
-  font-size:16px;
+  font-size:22px;
   font-weight:900;
-  margin:2px 0;
-  background: linear-gradient(120deg, white, gold, white);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  margin:5px 0;
+  background:linear-gradient(120deg,white,gold,white);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
   display:inline-block;
 }
 
 .news-strip {
-  background: linear-gradient(90deg,#fff,#f5d36a,#fff);
+  background:linear-gradient(90deg,#fff,#f5d36a,#fff);
   border-radius:20px;
   overflow:hidden;
   display:flex;
   align-items:center;
-  height:22px;
-  font-size:12px;
-  margin:5px 0 0 0;
-  max-width:100%;
+  height:28px;
+  margin:15px 0 0 0;
+  max-width:90%;
   position:relative;
 }
 
@@ -162,6 +158,7 @@ header {
 </style>
 </head>
 <body>
+
 <header>
   <div class="header-text">
     <h1 class="main-title">أخبار مسك الختام</h1>
@@ -187,7 +184,7 @@ header {
 <button class="back-btn" id="backBtn">⬅ الرجوع إلى الأخبار العامة</button>
 
 <div class="news-display" id="newsBox">
-  <!-- هنا الأخبار كما في الكود السابق -->
+  <!-- الأخبار كما في الكود السابق -->
 </div>
 
 <script>
