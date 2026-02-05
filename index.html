@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -18,7 +19,8 @@ header{background:black;color:white;padding:20px;text-align:center;}
 .card{background:black;color:white;font-weight:900;padding:8px 12px;border-radius:12px;border:2px solid gold;cursor:pointer;transition: transform 0.2s, box-shadow 0.2s;}
 .card:hover{transform: scale(1.05);box-shadow:0 0 12px rgba(0,0,0,0.4);}
 .news-display{max-width:900px;margin:0 auto 30px auto;padding:15px;}
-.news-item{background:white;padding:12px;border-radius:12px;box-shadow:0 0 6px rgba(0,0,0,0.25);margin-bottom:15px;}
+.news-item{background:white;padding:12px;border-radius:12px;box-shadow:0 0 6px rgba(0,0,0,0.25);margin-bottom:15px;display:none;}
+.news-item.active{display:block;}
 .news-item h2{font-size:28px;font-weight:900;margin:0 0 6px 0;text-align:center;}
 .datetime{font-size:12px;color:gold;margin-bottom:4px;}
 .separator{height:2px;background:gold;margin:6px 0;}
@@ -46,69 +48,117 @@ header{background:black;color:white;padding:20px;text-align:center;}
 </div>
 
 <button class="back-btn" id="backBtn">⬅ الرجوع إلى الأخبار العامة</button>
-<div class="news-display" id="newsBox"></div>
+
+<div class="news-display" id="newsBox">
+
+  <!-- أخبار يدوية لكل قسم -->
+
+  <!-- قسم الأخبار -->
+  <div class="news-item" data-category="general">
+    <div class="datetime">07/02/2026 16:30</div>
+    <h2>زيادة في أجور العمال</h2>
+    <div class="separator"></div>
+    <div class="news-text">
+تم الإعلان عن زيادة جديدة في أجور العمال لتخفيف الأعباء المعيشية.
+    </div>
+  </div>
+
+  <!-- قسم الأعمال الخيرية -->
+  <div class="news-item" data-category="charity">
+    <div class="datetime">03/02/2026 11:00</div>
+    <h2>زيارة العائلة</h2>
+    <div class="separator"></div>
+    <div class="news-text">
+قمنا بزيارة العائلة في منزلها وتقديم الدعم اللازم لهم.
+    </div>
+  </div>
+
+  <!-- قسم المفقودات -->
+  <div class="news-item" data-category="missing">
+    <div class="datetime">01/02/2026 09:00</div>
+    <h2>إعلان مفقود</h2>
+    <div class="separator"></div>
+    <div class="news-text">
+تفاصيل إعلان المفقود.
+    </div>
+  </div>
+
+  <!-- قسم النشاطات -->
+  <div class="news-item" data-category="activities">
+    <div class="datetime">04/02/2026 14:00</div>
+    <h2>إنجاز المهمة</h2>
+    <div class="separator"></div>
+    <div class="news-text">
+تم انجاز المهمة بكل التزام وصرامة من قبل فريق الجمعية.
+    </div>
+  </div>
+
+  <!-- قسم التبرع -->
+  <div class="news-item" data-category="donate">
+    <div class="datetime">05/02/2026 15:30</div>
+    <h2>🚨 نداء مستعجل للتبرع بالدم 🚨</h2>
+    <div class="separator"></div>
+    <div class="news-text">
+مريض من بلديتنا في حاجة ماسة وعاجلة إلى دم من فصيلة A+
+📍 متواجد بـ مستشفى الإخوة طوبال – ميلة
+نرجو من كل من تتوفر لديه هذه الفصيلة التوجه في أقرب وقت ممكن للتبرع، فالأمر مستعجل جدًا وقد ينقذ حياة إنسان.
+📞 للاستفسار والتنسيق: 0792844621
+قال رسول الله ﷺ: «ومن أحياها فكأنما أحيا الناس جميعًا»
+جزاكم الله خيرًا وبارك فيكم 🤍
+🔁 الرجاء مشاركة المنشور على أوسع نطاق
+    </div>
+  </div>
+
+  <!-- قسم القفة -->
+  <div class="news-item" data-category="ramadan">
+    <div class="datetime">06/02/2026 16:00</div>
+    <h2>شراء وجبات رمضان</h2>
+    <div class="separator"></div>
+    <div class="news-text">
+تم شراء 20 وجبة رمضانية للمواطنين ضمن حملة الجمعية.
+    </div>
+  </div>
+
+  <!-- قسم الذكريات -->
+  <div class="news-item" data-category="memory">
+    <div class="datetime">2025</div>
+    <h2>ذكرى وفاة أبي</h2>
+    <div class="separator"></div>
+    <div class="news-text">
+اليوم ذكرى وفاة والدي رحمه الله، ونتذكره بالدعاء والاحترام.
+    </div>
+  </div>
+
+</div>
 
 <script>
 document.addEventListener("DOMContentLoaded", function(){
-
-  // ------------------------------
-  // مصفوفة الأخبار – يمكن تعديلها أو إضافة خبر جديد لأي قسم بسهولة
-  const newsData = {
-    general:[
-      {t:"07/02/2026 16:30", h:"زيادة في أجور العمال", c:"تم الإعلان عن زيادة جديدة في أجور العمال لتخفيف الأعباء المعيشية."}
-    ],
-    charity:[
-      {t:"03/02/2026 11:00", h:"زيارة العائلة", c:"قمنا بزيارة العائلة في منزلها وتقديم الدعم اللازم لهم."}
-    ],
-    missing:[
-      {t:"01/02/2026 09:00", h:"إعلان مفقود", c:"تفاصيل إعلان المفقود."}
-    ],
-    activities:[
-      {t:"04/02/2026 14:00", h:"إنجاز المهمة", c:"تم انجاز المهمة بكل التزام وصرامة من قبل فريق الجمعية."}
-    ],
-    donate:[
-      {t:"05/02/2026 15:30", h:"تم التكفل بالمريضة صاحبة دم O+", c:`تم التكفل بالمريضة صاحبة دم O+ بعد استجابة المتبرعين وتقديم الدعم الطبي اللازم.`}
-    ],
-    ramadan:[
-      {t:"06/02/2026 16:00", h:"شراء وجبات رمضان", c:"تم شراء 20 وجبة رمضانية للمواطنين ضمن حملة الجمعية."}
-    ],
-    memory:[
-      {t:"2025", h:"ذكرى وفاة أبي", c:"اليوم ذكرى وفاة والدي رحمه الله، ونتذكره بالدعاء والاحترام."}
-    ]
-  };
-
-  // ------------------------------
-  const box = document.getElementById("newsBox");
-  const backBtn = document.getElementById("backBtn");
   const cardsContainer = document.querySelector('.cards-container');
+  const backBtn = document.getElementById('backBtn');
+  const newsItems = document.querySelectorAll('.news-item');
 
-  function renderNews(list){
-    box.innerHTML="";
-    list.forEach(n=>{
-      box.innerHTML += `
-        <div class="news-item">
-          <div class="datetime">${n.t}</div>
-          <h2>${n.h}</h2>
-          <div class="separator"></div>
-          <div class="news-text">${n.c}</div>
-        </div>
-      `;
+  function showCategory(cat){
+    newsItems.forEach(item=>{
+      if(item.getAttribute('data-category') === cat){
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active');
+      }
     });
+    backBtn.style.display = 'block';
   }
 
   function showGeneral(){
-    backBtn.style.display="none";
-    renderNews(newsData.general);
+    newsItems.forEach(item=>{
+      if(item.getAttribute('data-category') === 'general'){
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active');
+      }
+    });
+    backBtn.style.display = 'none';
   }
 
-  function showCategory(cat){
-    if(newsData[cat]){
-      backBtn.style.display="block";
-      renderNews(newsData[cat]);
-    }
-  }
-
-  // ---- Event Delegation لضمان عمل الأزرار دائمًا ----
   cardsContainer.addEventListener('click', function(e){
     const card = e.target.closest('.card');
     if(card){
@@ -119,7 +169,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
   backBtn.addEventListener('click', showGeneral);
 
-  // عرض الأخبار العامة عند تحميل الصفحة
+  // عند تحميل الصفحة عرض الأخبار العامة
   showGeneral();
 });
 </script>
