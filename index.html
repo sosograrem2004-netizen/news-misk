@@ -13,10 +13,11 @@ body {
   color:#000;
 }
 
+/* ====== هيدر مصغّر ====== */
 header {
   background:black;
   color:white;
-  padding:20px;
+  padding:10px 20px; /* تصغير الهيدر */
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -27,20 +28,20 @@ header {
 }
 
 .logo {
-  width:100px;
+  width:70px; /* تصغير اللوغو */
   margin:0;
 }
 
 .main-title {
-  font-size:28px;
+  font-size:22px; /* تصغير العنوان */
   font-weight:900;
   margin:0;
 }
 
 .subtitle {
-  font-size:22px;
+  font-size:16px; /* تصغير النص تحت العنوان */
   font-weight:900;
-  margin:5px 0;
+  margin:2px 0;
   background:linear-gradient(120deg,white,gold,white);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
@@ -53,8 +54,9 @@ header {
   overflow:hidden;
   display:flex;
   align-items:center;
-  height:28px;
-  margin:15px 0 0 0;
+  height:22px; /* تصغير شريط الأخبار */
+  font-size:12px; /* تصغير النص */
+  margin:8px 0 0 0;
   max-width:100%;
   position:relative;
 }
@@ -72,6 +74,7 @@ header {
   to {transform:translateX(100%);}
 }
 
+/* ====== باقي الصفحة ====== */
 .cards-container {
   display:flex;
   justify-content:center;
