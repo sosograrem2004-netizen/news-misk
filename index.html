@@ -5,35 +5,134 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>أخبار مسك الختام</title>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+
 <style>
 body{margin:0;font-family:'Cairo',sans-serif;background:#f2f2f2;color:#000;}
-header{background:black;color:white;padding:20px;text-align:center;}
-.logo{width:100px;display:block;margin:0 auto 10px auto;}
+
+header{
+  background:black;
+  color:white;
+  padding:20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.header-text{
+  text-align:right;
+  flex:1;
+}
+
+.logo{
+  width:100px;
+  margin-left:15px;
+}
+
 .main-title{font-size:28px;font-weight:900;margin:0;}
-.subtitle{font-size:22px;font-weight:900;margin:5px 0;background:linear-gradient(120deg,white,gold,white);-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:inline-block;}
-.news-strip{background:linear-gradient(90deg,#fff,#f5d36a,#fff);border-radius:20px;overflow:hidden;display:flex;align-items:center;height:28px;margin:15px auto 0 auto;max-width:90%;position:relative;}
-.news-strip span{white-space:nowrap;font-weight:700;color:#000;animation:scrollNews 18s linear infinite;display:block;}
-@keyframes scrollNews{from{transform:translateX(-100%);}to{transform:translateX(100%);}}
-.cards-container{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin:15px 0;}
-.card{background:black;color:white;font-weight:900;padding:8px 12px;border-radius:12px;border:2px solid gold;cursor:pointer;transition: transform 0.2s, box-shadow 0.2s;}
-.card:hover{transform: scale(1.05);box-shadow:0 0 12px rgba(0,0,0,0.4);}
-.news-display{max-width:900px;margin:0 auto 30px auto;padding:15px;}
-.news-item{background:white;padding:12px;border-radius:12px;box-shadow:0 0 6px rgba(0,0,0,0.25);margin-bottom:15px;display:none;}
+.subtitle{font-size:22px;font-weight:900;margin:5px 0;
+  background:linear-gradient(120deg,white,gold,white);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  display:inline-block;
+}
+
+.news-strip{
+  background:linear-gradient(90deg,#fff,#f5d36a,#fff);
+  border-radius:20px;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  height:28px;
+  margin-top:10px;
+  max-width:90%;
+}
+
+.news-strip span{
+  white-space:nowrap;
+  font-weight:700;
+  color:#000;
+  animation:scrollNews 18s linear infinite;
+}
+
+@keyframes scrollNews{
+  from{transform:translateX(-100%);}
+  to{transform:translateX(100%);}
+}
+
+.cards-container{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:15px 0;
+}
+
+.card{
+  background:black;
+  color:white;
+  font-weight:900;
+  padding:8px 12px;
+  border-radius:12px;
+  border:2px solid gold;
+  cursor:pointer;
+}
+
+.card:hover{transform:scale(1.05);}
+
+.news-display{
+  max-width:900px;
+  margin:0 auto 30px;
+  padding:15px;
+}
+
+.news-item{
+  background:white;
+  padding:12px;
+  border-radius:12px;
+  box-shadow:0 0 6px rgba(0,0,0,0.25);
+  margin-bottom:15px;
+  display:none;
+}
+
 .news-item.active{display:block;}
-.news-item h2{font-size:28px;font-weight:900;margin:0 0 6px 0;text-align:center;}
-.datetime{font-size:12px;color:gold;margin-bottom:4px;}
+
+.news-item h2{
+  font-size:28px;
+  font-weight:900;
+  text-align:center;
+}
+
+.datetime{font-size:12px;color:gold;}
 .separator{height:2px;background:gold;margin:6px 0;}
-.news-text{font-size:14px;line-height:1.6;white-space: pre-line;}
-.back-btn{display:none;background:black;color:gold;font-weight:900;padding:10px 20px;border-radius:30px;border:2px solid gold;margin:10px auto;width:fit-content;cursor:pointer;}
+.news-text{line-height:1.6;white-space:pre-line;}
+
+.back-btn{
+  display:none;
+  background:black;
+  color:gold;
+  font-weight:900;
+  padding:10px 20px;
+  border-radius:30px;
+  border:2px solid gold;
+  margin:10px auto;
+  cursor:pointer;
+}
 </style>
 </head>
+
 <body>
 
 <header>
-<img src="logo1.png" alt="لوغو الجمعية" class="logo">
-<h1 class="main-title">أخبار مسك الختام</h1>
-<div class="subtitle">MISK ELKHITHEM</div>
-<div class="news-strip"><span>🔔 خبر عاجل: انطلاق حملة قفة رمضان 2026 لفائدة العائلات المعوزة – الجمعية الخيرية مسك الختام</span></div>
+  <div class="header-text">
+    <h1 class="main-title">أخبار مسك الختام</h1>
+    <div class="subtitle">MISK ELKHITHEM</div>
+
+    <div class="news-strip">
+      <span>🔔 خبر عاجل: انطلاق حملة قفة رمضان 2026 لفائدة العائلات المعوزة – الجمعية الخيرية مسك الختام</span>
+    </div>
+  </div>
+
+  <img src="logo1.png" alt="لوغو الجمعية" class="logo">
 </header>
 
 <div class="cards-container">
@@ -50,126 +149,61 @@ header{background:black;color:white;padding:20px;text-align:center;}
 
 <div class="news-display" id="newsBox">
 
-  <!-- أخبار يدوية لكل قسم -->
-
-  <!-- قسم الأخبار -->
   <div class="news-item" data-category="general">
-    <div class="datetime">07/02/2026 16:30</div>
+    <div class="datetime">07/02/2026</div>
     <h2>زيادة في أجور العمال</h2>
     <div class="separator"></div>
-    <div class="news-text">
-تم الإعلان عن زيادة جديدة في أجور العمال لتخفيف الأعباء المعيشية.
-    </div>
+    <div class="news-text">تم الإعلان عن زيادة جديدة في أجور العمال.</div>
   </div>
 
-  <!-- قسم الأعمال الخيرية -->
   <div class="news-item" data-category="charity">
-    <div class="datetime">03/02/2026 11:00</div>
+    <div class="datetime">03/02/2026</div>
     <h2>زيارة العائلة</h2>
     <div class="separator"></div>
-    <div class="news-text">
-قمنا بزيارة العائلة في منزلها وتقديم الدعم اللازم لهم.
-    </div>
+    <div class="news-text">قمنا بزيارة العائلة بمنزلها.</div>
   </div>
 
-  <!-- قسم المفقودات -->
-  <div class="news-item" data-category="missing">
-    <div class="datetime">01/02/2026 09:00</div>
-    <h2>إعلان مفقود</h2>
-    <div class="separator"></div>
-    <div class="news-text">
-تفاصيل إعلان المفقود.
-    </div>
-  </div>
-
-  <!-- قسم النشاطات -->
   <div class="news-item" data-category="activities">
-    <div class="datetime">04/02/2026 14:00</div>
+    <div class="datetime">04/02/2026</div>
     <h2>إنجاز المهمة</h2>
     <div class="separator"></div>
-    <div class="news-text">
-تم انجاز المهمة بكل التزام وصرامة من قبل فريق الجمعية.
-    </div>
+    <div class="news-text">تم إنجاز المهمة بكل التزام.</div>
   </div>
 
-  <!-- قسم التبرع -->
   <div class="news-item" data-category="donate">
-    <div class="datetime">05/02/2026 15:30</div>
-    <h2>🚨 نداء مستعجل للتبرع بالدم 🚨</h2>
+    <div class="datetime">05/02/2026</div>
+    <h2>تم التكفل بالمريضة</h2>
     <div class="separator"></div>
-    <div class="news-text">
-مريض من بلديتنا في حاجة ماسة وعاجلة إلى دم من فصيلة A+
-📍 متواجد بـ مستشفى الإخوة طوبال – ميلة
-نرجو من كل من تتوفر لديه هذه الفصيلة التوجه في أقرب وقت ممكن للتبرع، فالأمر مستعجل جدًا وقد ينقذ حياة إنسان.
-📞 للاستفسار والتنسيق: 0792844621
-قال رسول الله ﷺ: «ومن أحياها فكأنما أحيا الناس جميعًا»
-جزاكم الله خيرًا وبارك فيكم 🤍
-🔁 الرجاء مشاركة المنشور على أوسع نطاق
-    </div>
-  </div>
-
-  <!-- قسم القفة -->
-  <div class="news-item" data-category="ramadan">
-    <div class="datetime">06/02/2026 16:00</div>
-    <h2>شراء وجبات رمضان</h2>
-    <div class="separator"></div>
-    <div class="news-text">
-تم شراء 20 وجبة رمضانية للمواطنين ضمن حملة الجمعية.
-    </div>
-  </div>
-
-  <!-- قسم الذكريات -->
-  <div class="news-item" data-category="memory">
-    <div class="datetime">2025</div>
-    <h2>ذكرى وفاة أبي</h2>
-    <div class="separator"></div>
-    <div class="news-text">
-اليوم ذكرى وفاة والدي رحمه الله، ونتذكره بالدعاء والاحترام.
-    </div>
+    <div class="news-text">تم التكفل بالمريضة صاحبة دم O+.</div>
   </div>
 
 </div>
 
 <script>
-document.addEventListener("DOMContentLoaded", function(){
-  const cardsContainer = document.querySelector('.cards-container');
-  const backBtn = document.getElementById('backBtn');
-  const newsItems = document.querySelectorAll('.news-item');
+document.addEventListener("DOMContentLoaded",()=>{
+  const cards=document.querySelectorAll(".card");
+  const items=document.querySelectorAll(".news-item");
+  const back=document.getElementById("backBtn");
 
-  function showCategory(cat){
-    newsItems.forEach(item=>{
-      if(item.getAttribute('data-category') === cat){
-        item.classList.add('active');
-      } else {
-        item.classList.remove('active');
-      }
+  function show(cat){
+    items.forEach(i=>{
+      i.classList.toggle("active",i.dataset.category===cat);
     });
-    backBtn.style.display = 'block';
+    back.style.display="block";
   }
 
-  function showGeneral(){
-    newsItems.forEach(item=>{
-      if(item.getAttribute('data-category') === 'general'){
-        item.classList.add('active');
-      } else {
-        item.classList.remove('active');
-      }
-    });
-    backBtn.style.display = 'none';
-  }
-
-  cardsContainer.addEventListener('click', function(e){
-    const card = e.target.closest('.card');
-    if(card){
-      const cat = card.getAttribute('data-category');
-      showCategory(cat);
-    }
+  cards.forEach(c=>{
+    c.onclick=()=>show(c.dataset.category);
   });
 
-  backBtn.addEventListener('click', showGeneral);
+  back.onclick=()=>{
+    items.forEach(i=>{
+      i.classList.toggle("active",i.dataset.category==="general");
+    });
+    back.style.display="none";
+  };
 
-  // عند تحميل الصفحة عرض الأخبار العامة
-  showGeneral();
+  back.onclick();
 });
 </script>
 
