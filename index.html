@@ -30,12 +30,12 @@ header {
 .main-title {
   font-size:36px; /* حجم العنوان */
   font-weight:900;
-  line-height:1.1; /* تقليل الفراغ بين السطرين */
+  line-height:1; /* تقليل الفراغ بين السطرين */
   margin:0;
 }
 
-.main-title br {
-  display:block;
+.main-title span {
+  display:block; /* كل كلمة في سطر مستقل */
 }
 
 .subtitle {
@@ -140,7 +140,10 @@ header {
 
 <header>
   <div class="header-text">
-    <h1 class="main-title">أخبار<br>مسك الختام</h1>
+    <h1 class="main-title">
+      <span>أخبار</span>
+      <span>مسك الختام</span>
+    </h1>
     <div class="subtitle">MISK ELKHITHEM</div>
   </div>
   <img src="logo1.png" alt="لوغو الجمعية" class="logo">
