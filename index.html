@@ -6,155 +6,152 @@
 <title>أخبار مسك الختام</title>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-  /* ---------- قاعدة الصفحة ---------- */
-  body {
-    margin: 0;
-    font-family: 'Cairo', sans-serif;
-    background: #f2f2f2;
-    color: #000;
-  }
+/* ---------- قاعدة الصفحة ---------- */
+body {
+  margin: 0;
+  font-family: 'Cairo', sans-serif;
+  background: #f2f2f2;
+  color: #000;
+}
 
-  /* ---------- الهيدر ---------- */
-  header {
-    background: black;
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-  }
+/* ---------- الهيدر ---------- */
+header {
+  background: black;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
-  .logo {
-    width: 100px;
-    display: block;
-  }
+.logo {
+  width: 100px;
+}
 
-  .titles {
-    text-align: left;
-  }
+.header-texts {
+  text-align: left;
+}
 
-  .main-title {
-    font-size: 36px;
-    font-weight: 900;
-    line-height: 1.1;
-    margin: 0;
-  }
+/* العنوان الرئيسي في سطرين */
+.main-title {
+  font-size: 36px;
+  font-weight: 900;
+  margin: 0;
+  line-height: 1.1;
+}
 
-  .main-title .line1 {
-    display: block;
-  }
+.main-title .line1,
+.main-title .line2 {
+  display: block;
+}
 
-  .main-title .line2 {
-    display: block;
-    margin-top: 5px;
-  }
+/* خط متوسط بين العنوان الرئيسي والثانوي */
+.separator-title {
+  height: 3px;
+  background: gold;
+  width: 60px;
+  margin: 5px 0;
+}
 
-  .separator-title {
-    height: 3px;
-    background: gold;
-    margin: 5px 0;
-    width: 60px;
-  }
+/* العنوان الثانوي */
+.subtitle {
+  font-size: 22px;
+  font-weight: 900;
+  background: linear-gradient(120deg, white, gold, white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
 
-  .subtitle {
-    font-size: 22px;
-    font-weight: 900;
-    background: linear-gradient(120deg, white, gold, white);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
-    margin-top: 5px;
-  }
+/* ---------- بطاقات الفئات ---------- */
+.cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 15px 0;
+}
 
-  /* ---------- بطاقات الفئات ---------- */
-  .cards-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 15px 0;
-  }
+.card {
+  background: black;
+  color: white;
+  font-weight: 900;
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 2px solid gold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
 
-  .card {
-    background: black;
-    color: white;
-    font-weight: 900;
-    padding: 8px 12px;
-    border-radius: 12px;
-    border: 2px solid gold;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(0,0,0,0.4);
+}
 
-  .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 12px rgba(0,0,0,0.4);
-  }
+/* ---------- عرض الأخبار ---------- */
+.news-display {
+  max-width: 900px;
+  margin: 0 auto 30px auto;
+  padding: 15px;
+}
 
-  /* ---------- عرض الأخبار ---------- */
-  .news-display {
-    max-width: 900px;
-    margin: 0 auto 30px auto;
-    padding: 15px;
-  }
+.news-item {
+  background: white;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.25);
+  margin-bottom: 15px;
+  display: none;
+}
 
-  .news-item {
-    background: white;
-    padding: 12px;
-    border-radius: 12px;
-    box-shadow: 0 0 6px rgba(0,0,0,0.25);
-    margin-bottom: 15px;
-    display: none;
-  }
+.news-item.active {
+  display: block;
+}
 
-  .news-item.active {
-    display: block;
-  }
+.news-item h2 {
+  font-size: 28px;
+  font-weight: 900;
+  margin: 0 0 6px 0;
+  text-align: center;
+}
 
-  .news-item h2 {
-    font-size: 28px;
-    font-weight: 900;
-    margin: 0 0 6px 0;
-    text-align: center;
-  }
+.datetime {
+  font-size: 12px;
+  color: gold;
+  margin-bottom: 4px;
+}
 
-  .datetime {
-    font-size: 12px;
-    color: gold;
-    margin-bottom: 4px;
-  }
+.separator {
+  height: 2px;
+  background: gold;
+  margin: 6px 0;
+}
 
-  .separator {
-    height: 2px;
-    background: gold;
-    margin: 6px 0;
-  }
+.news-text {
+  font-size: 14px;
+  line-height: 1.6;
+  white-space: pre-line;
+}
 
-  .news-text {
-    font-size: 14px;
-    line-height: 1.6;
-    white-space: pre-line;
-  }
-
-  .back-btn {
-    display: none;
-    background: black;
-    color: gold;
-    font-weight: 900;
-    padding: 10px 20px;
-    border-radius: 30px;
-    border: 2px solid gold;
-    margin: 10px auto;
-    width: fit-content;
-    cursor: pointer;
-  }
+.back-btn {
+  display: none;
+  background: black;
+  color: gold;
+  font-weight: 900;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 2px solid gold;
+  margin: 10px auto;
+  width: fit-content;
+  cursor: pointer;
+}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="titles">
+  <div class="header-texts">
     <h1 class="main-title">
       <span class="line1">أخبار</span>
       <span class="line2">مسك الختام</span>
@@ -178,73 +175,13 @@
 <button class="back-btn" id="backBtn">⬅ الرجوع إلى الأخبار العامة</button>
 
 <div class="news-display" id="newsBox">
-  <!-- قسم الأخبار -->
+  <!-- مثال أخبار يمكن نسخها وتعديلها -->
   <div class="news-item" data-category="general">
     <div class="datetime"></div>
     <h2>زيادة في أجور العمال</h2>
     <div class="separator"></div>
     <div class="news-text">
 تم الإعلان عن زيادة جديدة في أجور العمال لتخفيف الأعباء المعيشية.
-    </div>
-  </div>
-  <!-- قسم الأعمال الخيرية -->
-  <div class="news-item" data-category="charity">
-    <div class="datetime"></div>
-    <h2>زيارة العائلة</h2>
-    <div class="separator"></div>
-    <div class="news-text">
-قمنا بزيارة العائلة في منزلها وتقديم الدعم اللازم لهم.
-    </div>
-  </div>
-  <!-- قسم المفقودات -->
-  <div class="news-item" data-category="missing">
-    <div class="datetime"></div>
-    <h2>إعلان مفقود</h2>
-    <div class="separator"></div>
-    <div class="news-text">
-تفاصيل إعلان المفقود.
-    </div>
-  </div>
-  <!-- قسم النشاطات -->
-  <div class="news-item" data-category="activities">
-    <div class="datetime"></div>
-    <h2>إنجاز المهمة</h2>
-    <div class="separator"></div>
-    <div class="news-text">
-تم انجاز المهمة بكل التزام وصرامة من قبل فريق الجمعية.
-    </div>
-  </div>
-  <!-- قسم التبرع -->
-  <div class="news-item" data-category="donate">
-    <div class="datetime"></div>
-    <h2>🚨 نداء مستعجل للتبرع بالدم 🚨</h2>
-    <div class="separator"></div>
-    <div class="news-text">
-مريض من بلديتنا في حاجة ماسة وعاجلة إلى دم من فصيلة A+
-📍 متواجد بـ مستشفى الإخوة طوبال – ميلة
-نرجو من كل من تتوفر لديه هذه الفصيلة التوجه في أقرب وقت ممكن للتبرع، فالأمر مستعجل جدًا وقد ينقذ حياة إنسان.
-📞 للاستفسار والتنسيق: 0792844621
-قال رسول الله ﷺ: «ومن أحياها فكأنما أحيا الناس جميعًا»
-جزاكم الله خيرًا وبارك فيكم 🤍
-🔁 الرجاء مشاركة المنشور على أوسع نطاق
-    </div>
-  </div>
-  <!-- قسم القفة -->
-  <div class="news-item" data-category="ramadan">
-    <div class="datetime"></div>
-    <h2>شراء وجبات رمضان</h2>
-    <div class="separator"></div>
-    <div class="news-text">
-تم شراء 20 وجبة رمضانية للمواطنين ضمن حملة الجمعية.
-    </div>
-  </div>
-  <!-- قسم الذكريات -->
-  <div class="news-item" data-category="memory">
-    <div class="datetime"></div>
-    <h2>ذكرى وفاة أبي</h2>
-    <div class="separator"></div>
-    <div class="news-text">
-اليوم ذكرى وفاة والدي رحمه الله، ونتذكره بالدعاء والاحترام.
     </div>
   </div>
 </div>
@@ -299,7 +236,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
   backBtn.addEventListener('click', showGeneral);
 
-  // عند تحميل الصفحة عرض الأخبار العامة
   showGeneral();
 });
 </script>
