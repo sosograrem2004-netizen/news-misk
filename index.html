@@ -16,26 +16,26 @@ body {
 /* ====== هيدر ====== */
 header {
   display:flex;
-  align-items:flex-start;
-  justify-content:flex-end; /* نقل العنوان إلى اليمين */
+  align-items:center;
+  justify-content:space-between; /* العنوان على اليسار، اللوغو على اليمين */
   padding:20px;
   background:black;
   color:white;
 }
 
 .header-text {
-  text-align:right;
+  text-align:left; /* العنوان على اليسار */
 }
 
 .main-title {
-  font-size:36px; /* تصغير العنوان */
+  font-size:36px; /* حجم العنوان */
   font-weight:900;
   line-height:1.1; /* تقليل الفراغ بين السطرين */
   margin:0;
 }
 
 .main-title br {
-  display:block; /* يجعل الكسر <br> سطر جديد */
+  display:block;
 }
 
 .subtitle {
@@ -48,6 +48,12 @@ header {
   display:inline-block;
 }
 
+.logo {
+  width:100px;
+  height:auto;
+}
+
+/* ===== باقي الصفحة ===== */
 .cards-container {
   display:flex;
   justify-content:center;
@@ -137,6 +143,7 @@ header {
     <h1 class="main-title">أخبار<br>مسك الختام</h1>
     <div class="subtitle">MISK ELKHITHEM</div>
   </div>
+  <img src="logo1.png" alt="لوغو الجمعية" class="logo">
 </header>
 
 <div class="cards-container">
@@ -169,7 +176,6 @@ header {
 قمنا بزيارة العائلة في منزلها وتقديم الدعم اللازم لهم.
     </div>
   </div>
-  <!-- يمكن تكرار باقي الأخبار بنفس الشكل -->
 </div>
 
 <script>
