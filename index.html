@@ -14,7 +14,6 @@ body{
   padding:20px;
 }
 
-/* البطاقات */
 .cards{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
@@ -36,20 +35,6 @@ body{
   transform:scale(1.05);
 }
 
-/* بطاقة عاجل */
-.card.urgent{
-  border:3px solid red;
-  box-shadow:0 0 15px red;
-  animation: urgentPulse 1s infinite;
-}
-
-@keyframes urgentPulse{
-  0%{box-shadow:0 0 10px red;}
-  50%{box-shadow:0 0 40px #ff0000;}
-  100%{box-shadow:0 0 10px red;}
-}
-
-/* زر العودة */
 #backBtn{
   display:none;
   margin:20px 0;
@@ -61,7 +46,6 @@ body{
   cursor:pointer;
 }
 
-/* الأخبار */
 .news-item{
   display:none;
   background:#fff;
@@ -85,9 +69,8 @@ body{
 
 <body>
 
-<!-- البطاقات -->
 <div class="cards">
-  <div class="card urgent" onclick="showCategory('general')">عاجل</div>
+  <div class="card" onclick="showCategory('general')">أخبار</div>
   <div class="card" onclick="showCategory('donate')">تبرع</div>
   <div class="card" onclick="showCategory('activities')">نشاطات</div>
   <div class="card" onclick="showCategory('charity')">أعمال خيرية</div>
@@ -95,9 +78,7 @@ body{
   <div class="card" onclick="showCategory('basket')">قفة</div>
 </div>
 
-<button id="backBtn" onclick="goBack()">عودة</button>
-
-<!-- الأخبار (تعديل يدوي 100%) -->
+<button id="backBtn" onclick="goBack()">⬅ الرجوع إلى الأخبار العامة</button>
 
 <div class="news-item" data-category="general">
   <div class="news-title">زيادة في أجور العمال</div>
