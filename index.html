@@ -13,11 +13,11 @@ body {
   color:#000;
 }
 
-/* ====== هيدر مع العناوين على اليسار ====== */
+/* ====== هيدر ====== */
 header {
   display:flex;
-  align-items:center;
-  justify-content:flex-start; /* العناوين على اليسار */
+  align-items:flex-start;
+  justify-content:flex-start;
   padding:20px;
   background:black;
   color:white;
@@ -28,9 +28,14 @@ header {
 }
 
 .main-title {
-  font-size:28px;
+  font-size:48px; /* تكبير العنوان */
   font-weight:900;
+  line-height:1.2; /* فصل الأسطر قليلاً */
   margin:0;
+}
+
+.main-title br {
+  display:block; /* يجعل الكسر <br> فعلياً سطر جديد */
 }
 
 .subtitle {
@@ -129,7 +134,7 @@ header {
 
 <header>
   <div class="header-text">
-    <h1 class="main-title">أخبار مسك الختام</h1>
+    <h1 class="main-title">أخبار<br>مسك الختام</h1>
     <div class="subtitle">MISK ELKHITHEM</div>
   </div>
 </header>
