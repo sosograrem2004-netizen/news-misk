@@ -13,11 +13,11 @@ body {
   color:#000;
 }
 
-/* ====== هيدر ====== */
+/* ====== هيدر بدون لوغو وشريط الأخبار ====== */
 header {
   display:flex;
   align-items:center;
-  justify-content:space-between;
+  justify-content:flex-end; /* العناوين على اليمين */
   padding:20px;
   background:black;
   color:white;
@@ -25,11 +25,6 @@ header {
 
 .header-text {
   text-align:right;
-}
-
-.logo {
-  width:100px;
-  margin:0;
 }
 
 .main-title {
@@ -46,31 +41,6 @@ header {
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
   display:inline-block;
-}
-
-.news-strip {
-  background:linear-gradient(90deg,#fff,#f5d36a,#fff);
-  border-radius:20px;
-  overflow:hidden;
-  display:flex;
-  align-items:center;
-  height:28px;
-  margin:15px 0 0 0;
-  max-width:90%;
-  position:relative;
-}
-
-.news-strip span {
-  white-space:nowrap;
-  font-weight:700;
-  color:#000;
-  animation:scrollNews 18s linear infinite;
-  display:block;
-}
-
-@keyframes scrollNews {
-  from {transform:translateX(-100%);}
-  to {transform:translateX(100%);}
 }
 
 /* ====== البطاقات ====== */
@@ -163,12 +133,7 @@ header {
   <div class="header-text">
     <h1 class="main-title">أخبار مسك الختام</h1>
     <div class="subtitle">MISK ELKHITHEM</div>
-    <div class="news-strip">
-      <span>🔔 خبر عاجل: انطلاق حملة قفة رمضان 2026 لفائدة العائلات المعوزة – الجمعية الخيرية مسك الختام</span>
-    </div>
   </div>
-
-  <img src="logo1.png" alt="لوغو الجمعية" class="logo">
 </header>
 
 <div class="cards-container">
